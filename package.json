@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start:dev": "next",
+    "start:ci": "next &",
     "build:dev": "next build",
     "build": "NODE_ENV=production next build",
     "export": "next export",
@@ -14,7 +15,8 @@
     "lint:ts": "tslint -c tslint.json -p tsconfig.json",
     "test": "npm run test:unit && npm run test:e2e",
     "test:unit": "jest",
-    "test:e2e": "cypress run",
+    "test:e2e": "npm run start:dev && cypress run",
+    "test:e2e:ci": "npm run start:ci && cypress run",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "ts:check": "tsc --noEmit",
