@@ -19,13 +19,13 @@ export const getStore = (state, isServer?): Store<RootState> => {
       const mw = [thunk];
       if (!DEV) {
         if (window.__REACT_DEVTOOLS_GLOBAL_HOOK__) {
-          window.__REACT_DEVTOOLS_GLOBAL_HOOK__.inject = function() {};
+          window.__REACT_DEVTOOLS_GLOBAL_HOOK__.inject = function() {}; // tslint:disable-line
         }
       } else {
         mw.push(
           createLogger({
-            predicate: (getState, action) => !/^@@/.test(action.type),
             collapsed: true,
+            predicate: (getState, action) => !/^@@/.test(action.type),
           }),
         );
       }
@@ -38,8 +38,8 @@ export const getStore = (state, isServer?): Store<RootState> => {
       store.dispatch(session());
 
       const whitelist = ['persist'];
-      persistStore(store, { whitelist }, _ => {
-        console.log(`define whitelist: ${whitelist.join(', ')}`);
+      persistStore(store, { whitelist }, (_) => {
+        console.log(`define whitelist: ${whitelist.join(', ')}`); // tslint:disable-line
       });
     }
     return store;

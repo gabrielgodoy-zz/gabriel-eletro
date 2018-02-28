@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PageWrapper from "../src/components/PageWrapper/PageWrapper";
+import PageWrapper from '../src/components/PageWrapper/PageWrapper';
 
 const Index = () => (
   <PageWrapper>

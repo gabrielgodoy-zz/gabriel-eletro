@@ -1,15 +1,9 @@
-import * as React from "react";
-import Document, { Head, Main, NextScript } from "next/document";
-import {
-  DEV,
-  SITE_DESCRIPTION,
-  SITE_IMAGE,
-  SITE_NAME,
-  SITE_TITLE
-} from "../src/constants/env";
+import * as React from 'react';
+import Document, { Head, Main, NextScript } from 'next/document';
+import { DEV, SITE_DESCRIPTION, SITE_IMAGE, SITE_NAME, SITE_TITLE } from '../src/constants/env';
 
 export default class extends Document {
-  static async getInitialProps(...args) {
+  private static async getInitialProps(...args) {
     const d: any = Document;
     const documentProps = await d.getInitialProps(...args);
     const { req, renderPage } = args[0];
@@ -18,7 +12,7 @@ export default class extends Document {
     return { ...documentProps, ...page };
   }
 
-  render() {
+  private render() {
     return (
       <html>
         <Head>
@@ -47,21 +41,21 @@ export default class extends Document {
             href="//cdnjs.cloudflare.com/ajax/libs/tachyons/4.8.1/tachyons.min.css"
             rel="stylesheet"
           />
-          <link
-            href="https://fonts.googleapis.com/css?family=Open+Sans"
-            rel="stylesheet"
-          />
+          <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
           <style>
             {`
-              body { 
+              body {
                 -webkit-font-smoothing: antialiased;
-                font-family: ${"Open Sans"}, sans-serif;
+                font-family: ${'Open Sans'}, sans-serif;
                 outline: 0;
               }
             `}
           </style>
 
-          <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.find,Array.prototype.includes,String.prototype.includes,Array.prototype.findIndex,Object.entries" />
+          <script
+            // tslint:disable-next-line
+            src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.find,Array.prototype.includes,String.prototype.includes,Array.prototype.findIndex,Object.entries"
+          />
         </Head>
         <body>
           <Main />

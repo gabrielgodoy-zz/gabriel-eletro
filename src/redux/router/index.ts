@@ -13,7 +13,7 @@ export const replaceUrl = (url = Router.pathname, options = {}, replace = false)
   updateUrl(url, options, replace, REPLACE);
 
 export function back() {
-  return dispatch => {
+  return (dispatch) => {
     dispatch({ type: ActionTypes.BACK });
     window.history.back();
   };
@@ -46,12 +46,12 @@ function updateUrl(
 
     if (type === REPLACE) {
       const isSame = Object.entries(cleanObject(options)).every(
-        ([key, value]) => Router.query[key] == value.toString(),
+        ([key, value]) => Router.query[key] === value.toString(),
       );
       if (isSame) {
         return dispatch({
-          type: ActionTypes.RESTRICTED,
           payload: `${url}?${qs.stringify(query)}`,
+          type: ActionTypes.RESTRICTED,
         });
       }
     }
@@ -63,8 +63,8 @@ function updateUrl(
 
 const onRouteCompleteEvents = [];
 
-Router.onRouteChangeComplete = url => {
-  onRouteCompleteEvents.forEach(fx => fx(url));
+Router.onRouteChangeComplete = (url) => {
+  onRouteCompleteEvents.forEach((fx) => fx(url));
 };
 
 type Push = 'push';

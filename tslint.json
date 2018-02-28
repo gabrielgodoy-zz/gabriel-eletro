@@ -1,7 +1,15 @@
 {
+  "defaultSeverity": "error",
+  "extends": ["tslint:latest", "tslint-react"],
   "rules": {
-    "semicolon": [false, "never"],
+    "indent": [true, "spaces", 2],
+    "interface-name": false,
+    "no-var-requires": true,
     "quotemark": [true, "single", "jsx-double"],
-    "indent": [true, "spaces", 2]
+    "no-submodule-imports": false,
+    "no-implicit-dependencies": false,
+    "ordered-imports": false,
+    "jsx-no-multiline-js": false,
+    "jsx-boolean-value": false
   }
 }

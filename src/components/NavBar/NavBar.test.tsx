@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from '../../../tests/jest.setup';
+import { shallow } from 'enzyme';
 import NavBar from './NavBar';
 
 describe('Navbar', () => {

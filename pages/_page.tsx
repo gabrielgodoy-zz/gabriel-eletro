@@ -1,39 +1,38 @@
-import * as React from 'react'
-import {Provider, Store} from 'react-redux'
-import {getStore} from '../src/store'
-import {RootState} from '../src/redux/index'
+import * as React from 'react';
+import { Provider, Store } from 'react-redux';
+import { getStore } from '../src/store';
+import { RootState } from '../src/redux/index';
 
 interface Props {
-  state: RootState
-  server: boolean
+  state: RootState;
+  server: boolean;
   url: {
-    back()
-    pathname: string
-    push(url, as)
-    pushTo(href, as)
-    query: any
-    replace(url, as)
-    replaceTo(href, as)
-  }
+    pathname: string;
+    query: any;
+    back();
+    push(url, as);
+    pushTo(href, as);
+    replace(url, as);
+    replaceTo(href, as);
+  };
 }
 export class StaticPage<S> extends React.Component<Props, S> {
-  protected store: Store<RootState>
+  private static async getInitialProps({ req }) {
+    const server = !!req;
+    const store = getStore(undefined, server);
+    const state = store.getState();
 
-  static async getInitialProps({req}) {
-    const server       = !!req
-    const store        = getStore(undefined, server)
-    const state = store.getState()
-
-    return {state, server}
+    return { state, server };
   }
+
+  protected store: Store<RootState>;
 
   constructor(props) {
-    super(props)
-    this.store = getStore(props.initialState, props.server)
+    super(props);
+    this.store = getStore(props.initialState, props.server);
   }
 
-  render() {
-    console.warn('must override render()')
-    return null
+  public render() {
+    return null;
   }
 }

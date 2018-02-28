@@ -1,28 +1,28 @@
 {
-  "name": "next.js-typescript-starter-kit",
-  "version": "5.0.5",
+  "name": "gabriel-eletro",
+  "version": "0.0.1",
   "main": "index.js",
-  "repository": "https://github.com/deptno/next.js-typescript-starter-kit",
-  "author": "bglee <deptno@gmail.com>",
+  "repository": "https://github.com/gabrielgodoy/gabriel-eletro.git",
+  "author": "hi@gabrielgodoy.com",
   "license": "MIT",
   "scripts": {
     "start:dev": "next",
     "build:dev": "next build",
     "build": "NODE_ENV=production next build",
     "export": "next export",
-    "analyze": "NODE_ENV=production ANALYZE=true next build",
     "start": "next start",
+    "lint:ts": "tslint -c tslint.json -p tsconfig.json",
     "test": "jest",
+    "test:e2e": "cypress run",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "ts:check": "tsc --noEmit"
+    "ts:check": "tsc --noEmit",
+    "precommit": "npm run test",
+    "prepush": "npm run test:unit && npm run lint:ts"
   },
   "dependencies": {
     "@types/classnames": "^2.2.3",
     "@types/react": "^16.0.25",
-    "@types/react-ga": "^2.1.1",
     "@types/redux-persist": "^4.3.1",
     "classnames": "^2.2.5",
     "moment": "^2.19.2",
@@ -35,10 +35,6 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^3.3.12",
-    "@storybook/addon-links": "^3.3.12",
-    "@storybook/addons": "^3.3.12",
-    "@storybook/react": "^3.3.12",
     "@types/enzyme": "^3.1.8",
     "@types/enzyme-adapter-react-16": "^1.0.1",
     "@types/jest": "^21.1.10",
@@ -51,6 +47,7 @@
     "cypress": "^2.0.4",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "husky": "^0.14.3",
     "jest": "^22.2.1",
     "nextjs-export-path-map": "^0.1.2",
     "postcss-cssnext": "^3.0.2",
@@ -58,10 +55,12 @@
     "postcss-nested": "^2.1.2",
     "prettier": "^1.11.0",
     "redux-logger": "^3.0.6",
-    "skeleton-loader": "^1.1.4",
     "ts-jest": "^22.0.3",
-    "typescript": "^2.7.1",
-    "webpack-bundle-analyzer": "^2.9.0"
+    "tslint": "^5.9.1",
+    "tslint-config-airbnb": "^5.7.0",
+    "tslint-config-prettier": "^1.9.0",
+    "tslint-react": "^3.5.1",
+    "typescript": "^2.7.1"
   },
   "jest": {
     "moduleFileExtensions": [
