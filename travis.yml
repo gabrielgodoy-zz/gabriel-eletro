@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "stable"
+  - "9.4.0"
+notifications:
+  email:
+    on_success: never
+    on_failure: always
+script:
+  - npm run build
+  - npm run lint:ts
+  - npm run test:unit
+  - npm run test:e2e
