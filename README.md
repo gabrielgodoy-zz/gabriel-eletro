@@ -21,13 +21,7 @@ Acesse a [Gabriel Eletro](https://gabriel-eletro.herokuapp.com/) em produção
 
 # :point_up: Requisitos
 
-Requisitos para se desenvolver e rodar localmente
-
-### Com Docker
-
-Caso tenha docker instalado na máquina, somente o docker é necessário
-
-### Sem Docker
+Requisitos para desenvolver e rodar localmente
 
 - Node / npm
 
@@ -71,6 +65,7 @@ Caso tenha docker instalado na máquina, somente o docker é necessário
 - [Heroku](https://www.heroku.com/)
 
 - [TravisCI](https://github.com/travis-ci/travis-ci)
+
 
 
 ### Frontend
