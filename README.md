@@ -19,7 +19,7 @@ Acesse a [Gabriel Eletro](https://gabriel-eletro.herokuapp.com/) em produção
 <br />
 <br />
 
-## :point_up: Requisitos
+# :point_up: Requisitos
 
 Requisitos para se desenvolver e rodar localmente
 
@@ -34,7 +34,7 @@ Caso tenha docker instalado na máquina, somente o docker é necessário
 <br />
 <br />
 
-## :computer: Comandos
+# :computer: Comandos
 
 ### Instalando Dependências
 - `npm install`
@@ -46,21 +46,21 @@ Caso tenha docker instalado na máquina, somente o docker é necessário
 <br />
 <br />
 
-## :chart_with_upwards_trend: Board
+# :chart_with_upwards_trend: Board
 
 - [Board do projeto](https://github.com/gabrielgodoy/gabriel-eletro/projects/1)
 
 <br />
 <br />
 
-## :rocket: Principais tecnologias
+# :rocket: Principais tecnologias
 
 - [Node](https://github.com/nodejs/node)
 
 <br />
 <br />
 
-## :satellite: Ferramentas e bibliotecas
+# :satellite: Ferramentas e bibliotecas
 
 - [nextJS](https://github.com/zeit/next.js/)
 
@@ -117,7 +117,7 @@ Caso tenha docker instalado na máquina, somente o docker é necessário
 <br />
 <br />
 
-## :bowtie: Boas práticas
+# :bowtie: Boas práticas
 
 ### Rules
 - Nomes de branches que resolvem uma issue existente devem ser nomeados `fix/#ISSUE_ID` ou `feature/#ISSUE_ID`
@@ -129,14 +129,14 @@ Caso tenha docker instalado na máquina, somente o docker é necessário
 <br />
 <br />
 
-## Changelog
+# Changelog
 
 Mudanças no projeto podem ser acompanhadas em [CHANGELOG.md](https://github.com/gabrielgodoy/gabriel-eletro/blob/master/CHANGELOG.md)
 
 <br />
 <br />
 
-## :fist_oncoming: Time
+# :fist_oncoming: Time
 
 <!-- markdownlint-disable MD033 -->
 
@@ -146,14 +146,14 @@ Mudanças no projeto podem ser acompanhadas em [CHANGELOG.md](https://github.com
 <br />
 <br />
 
-## Créditos
+# Créditos
 
 [Glass Shelf in CSS](https://codepen.io/jtholloran/pen/KyvHb)
 
 <br />
 <br />
 
-## Licença
+# Licença
 
 [MIT License](https://gabrielgodoy.mit-license.org/license.html) @ [Gabriel Godoy](https://github.com/gabrielgodoy)
 
