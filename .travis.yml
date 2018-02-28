@@ -12,4 +12,4 @@ script:
   - npm run test:unit
   - npm run start:ci
   - npm run start:wait:ci
-  - npm run test:e2e:ci
+  - npm run test:e2e

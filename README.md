@@ -70,13 +70,6 @@ Caso tenha docker instalado na máquina, somente o docker é necessário
 
 - [Heroku](https://www.heroku.com/)
 
-- [mlab](https://mlab.com/)
-
-- [AWS S3](https://aws.amazon.com/s3) ou [Cloudinary](https://cloudinary.com/) para armazenamento de arquivos estáticos (imagens)
-
-- [Docker](https://www.docker.com/)
-  - [Docker compose](https://github.com/docker/compose)
-
 - [TravisCI](https://github.com/travis-ci/travis-ci)
 
 
@@ -101,10 +94,6 @@ Caso tenha docker instalado na máquina, somente o docker é necessário
 
 
 ### Backend
-- [MongoDB](https://github.com/mongodb/mongo)
-
-- [ExpressJS](https://github.com/expressjs/express)
-
 - [GraphQL](https://github.com/facebook/graphql)
   - [Graphcool](https://github.com/graphcool)
 
