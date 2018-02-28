@@ -6,3 +6,5 @@ export const Footer = (props) => (
     <div className="col-12">footer</div>
   </footer>
 );
+
+export default Footer;

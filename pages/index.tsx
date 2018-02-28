@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Provider, Store } from 'react-redux';
-import { Home } from '../src/components/Home';
+import { Home } from '../src/components/Home/Home';
 import PageWrapper from '../src/components/PageWrapper/PageWrapper';
 import { StaticPage } from './_page';
 

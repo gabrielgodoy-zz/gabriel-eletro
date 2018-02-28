@@ -12,13 +12,14 @@
     "export": "next export",
     "start": "next start",
     "lint:ts": "tslint -c tslint.json -p tsconfig.json",
-    "test": "jest",
+    "test": "npm run test:unit && npm run test:e2e",
+    "test:unit": "jest",
     "test:e2e": "cypress run",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "ts:check": "tsc --noEmit",
-    "precommit": "npm run test",
-    "prepush": "npm run test && npm run lint:ts"
+    "precommit": "npm run lint:ts",
+    "prepush": "npm run test:unit && npm run lint:ts"
   },
   "dependencies": {
     "@types/classnames": "^2.2.3",
