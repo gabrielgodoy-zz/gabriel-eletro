@@ -141,8 +141,6 @@ Mudanças no projeto podem ser acompanhadas em [CHANGELOG.md](https://github.com
 <!-- markdownlint-disable MD033 -->
 
 | [<img src="https://github.com/gabrielgodoy.png" width="130px;"/><br /><sub>Gabriel Godoy</sub>](https://github.com/gabrielgodoy)<br /> <sub>Desenvolvedor</sub> |
-| [<img src="https://github.com/gabrielgodoy.png" width="130px;"/><br /><sub>Gabriel Godoy</sub>](https://github.com/gabrielgodoy)<br /> <sub>Desenvolvedor</sub> |
-| [<img src="https://github.com/gabrielgodoy.png" width="130px;"/><br /><sub>Gabriel Godoy</sub>](https://github.com/gabrielgodoy)<br /> <sub>Desenvolvedor</sub> |
 | :---: |
 
 <br />
