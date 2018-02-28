@@ -41,7 +41,11 @@ Caso tenha docker instalado na máquina, somente o docker é necessário
 
 ### Rodando
 
-- `npm start` para rodar o projeto
+- `npm run start:dev` para rodar o projeto localmente
+
+### Criar um build do projeto
+
+- `npm run build`
 
 <br />
 <br />
@@ -89,8 +93,6 @@ Caso tenha docker instalado na máquina, somente o docker é necessário
 
 - [React](https://github.com/facebook/react)
   - [React Apollo](https://github.com/apollographql/react-apollo)
-
-- [Reselect](https://github.com/reactjs/reselect) serve para guardar dados que foram processados através de funções selectors, para que não sejam processados novamente. Com a técnica de memoization.
 
 - [Redux](https://github.com/reactjs/redux)
   - [Redux ducks](https://github.com/erikras/ducks-modular-redux)

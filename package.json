@@ -8,6 +8,7 @@
   "scripts": {
     "start:dev": "next",
     "start:ci": "next &",
+    "start:wait:ci": "wait-on http://localhost:3000",
     "build:dev": "next build",
     "build": "NODE_ENV=production next build",
     "export": "next export",
@@ -15,8 +16,7 @@
     "lint:ts": "tslint -c tslint.json -p tsconfig.json",
     "test": "npm run test:unit && npm run test:e2e",
     "test:unit": "jest",
-    "test:e2e": "npm run start:dev && cypress run",
-    "test:e2e:ci": "npm run start:ci && cypress run",
+    "test:e2e": "cypress run",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "ts:check": "tsc --noEmit",
@@ -63,7 +63,8 @@
     "tslint-config-airbnb": "^5.7.0",
     "tslint-config-prettier": "^1.9.0",
     "tslint-react": "^3.5.1",
-    "typescript": "^2.7.1"
+    "typescript": "^2.7.1",
+    "wait-on": "^2.1.0"
   },
   "jest": {
     "moduleFileExtensions": [

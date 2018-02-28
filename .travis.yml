@@ -10,4 +10,6 @@ script:
   - npm run build
   - npm run lint:ts
   - npm run test:unit
+  - npm run start:ci
+  - npm run start:wait:ci
   - npm run test:e2e:ci
