@@ -1,0 +1,7 @@
+type Product @model {
+  id: ID! @isUnique
+  sku: String! @migrationValue(value: "")
+  name: String!
+  image: String! @migrationValue(value: "")
+  price: Int! @migrationValue(value: 0)
+}

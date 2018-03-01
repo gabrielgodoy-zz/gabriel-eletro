@@ -2,8 +2,6 @@
 
 [![Travis](https://img.shields.io/travis/gabrielgodoy/gabriel-eletro.svg)]()
 
-> Qualquer semelhança com a [Ricardo Eletro](http://ricardoeletro.com.br/) é mera coincidência. 
-
 Acesse a [Gabriel Eletro](https://gabriel-eletro.herokuapp.com/) em produção
 
 ## Índice
@@ -67,7 +65,6 @@ Requisitos para desenvolver e rodar localmente
 - [TravisCI](https://github.com/travis-ci/travis-ci)
 
 
-
 ### Frontend
 
 - [Husky](https://github.com/typicode/husky)
@@ -83,9 +80,6 @@ Requisitos para desenvolver e rodar localmente
   - [React Apollo](https://github.com/apollographql/react-apollo)
 
 - [Redux](https://github.com/reactjs/redux)
-  - [Redux ducks](https://github.com/erikras/ducks-modular-redux)
-
-  - [Redux-localstorage](https://github.com/elgerlambert/redux-localstorage)
 
 
 ### Backend
