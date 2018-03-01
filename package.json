@@ -6,6 +6,7 @@
   "author": "hi@gabrielgodoy.com",
   "license": "MIT",
   "scripts": {
+    "prestart": "next build",
     "start": "next start -p $PORT",
     "start:dev": "next",
     "start:ci": "next &",
