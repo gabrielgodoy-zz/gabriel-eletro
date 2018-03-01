@@ -21,7 +21,9 @@
     "test:coverage": "jest --coverage",
     "ts:check": "tsc --noEmit",
     "precommit": "npm run lint:ts",
-    "prepush": "npm run test:unit && npm run lint:ts",
+    "prepush": "npm run test && npm run lint:ts",
+    "heroku-deploy": "git push heroku master",
+    "heroku-remote": "git remote add heroku https://git.heroku.com/gabriel-eletro.git",
     "heroku-postbuild": "next build"
   },
   "dependencies": {
