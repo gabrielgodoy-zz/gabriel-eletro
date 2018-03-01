@@ -21,7 +21,8 @@
     "test:coverage": "jest --coverage",
     "ts:check": "tsc --noEmit",
     "precommit": "npm run lint:ts",
-    "prepush": "npm run test:unit && npm run lint:ts"
+    "prepush": "npm run test:unit && npm run lint:ts",
+    "heroku-postbuild": "next build"
   },
   "dependencies": {
     "@types/classnames": "^2.2.3",

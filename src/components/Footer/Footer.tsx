@@ -1,9 +1,17 @@
 import * as React from 'react';
-import * as classnames from 'classnames';
 
 export const Footer = (props) => (
-  <footer className={classnames('row', 'footer')}>
-    <div className="col-12">footer</div>
+  <footer className="row footer custom-bg-yellow pv3">
+    <div className="col-12 f6 tc">
+      Copyright © 2018 gabriel-eletro.herokuapp.com. Todos os direitos reservados.
+    </div>
+    <style>
+      {`
+        .custom-bg-yellow {
+          background: #ffd300;
+        }
+      `};
+    </style>
   </footer>
 );
 
