@@ -1,6 +1,5 @@
 import * as React from 'react';
 import gql from 'graphql-tag';
-import { Home } from '../src/components/Home/Home';
 import PageWrapper from '../src/components/PageWrapper/PageWrapper';
 import Shelf from '../src/components/Shelf/Shelf';
 import client from './../src/lib/apollo-client';

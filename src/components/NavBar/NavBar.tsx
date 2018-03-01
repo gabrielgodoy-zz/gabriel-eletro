@@ -2,7 +2,7 @@ import * as React from 'react';
 import css from 'styled-jsx/css';
 
 const NavBar = () => (
-  <div className="pt4 pb5 pl3 pr3 custom-bg-yellow">
+  <div className="pt4 pb5 pl3 pr3 nav-bar custom-bg-yellow">
     <style>
       {`
         .custom-bg-yellow {

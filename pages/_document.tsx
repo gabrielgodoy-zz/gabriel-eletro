@@ -49,6 +49,10 @@ export default class extends Document {
                 font-family: ${'Open Sans'}, sans-serif;
                 outline: 0;
               }
+
+              button:focus {
+                outline:0;
+              }
             `}
           </style>
 
