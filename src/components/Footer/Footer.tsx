@@ -2,7 +2,7 @@ import * as React from 'react';
 
 export const Footer = (props) => (
   <footer className="row footer custom-bg-yellow pv3">
-    <div className="col-12 f6 tc">
+    <div className="copyright col-12 f6 tc">
       Copyright © 2018 gabriel-eletro.herokuapp.com. Todos os direitos reservados.
     </div>
     <style>

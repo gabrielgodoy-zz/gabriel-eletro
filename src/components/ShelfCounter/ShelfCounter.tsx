@@ -2,14 +2,24 @@ import * as React from 'react';
 import css from 'styled-jsx/css';
 
 const ShelfCounter = (props) => (
-  <div className="shelf-counter-container flex items-center flex-column">
-    <div className="product-number-title">
-      Número de items
-    </div>
+  <div className="shelf-counter-container relative flex items-center flex-column">
+    <div className="product-number-title">Número de items</div>
     <div className="input-prepend-append flex justify-center items-center">
-      <button type="button" className="btn btn-prepend"> - </button>
-      <div className="product-number">5</div>
-      <button type="button" className="btn btn-append"> + </button>
+      <button
+        type="button"
+        className="btn btn-prepend btn-decrease"
+        onClick={() => props.changeProductsNumber('decrease')}
+      >
+        {' - '}
+      </button>
+      <div className="product-number">{props.counter}</div>
+      <button
+        type="button"
+        className="btn btn-append btn-increase"
+        onClick={() => props.changeProductsNumber('increase')}
+      >
+        {' + '}
+      </button>
 
       <style>
         {`
