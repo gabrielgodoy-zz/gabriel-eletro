@@ -44,7 +44,8 @@ Requisitos para desenvolver e rodar localmente
 
 # :chart_with_upwards_trend: Board
 
-- [Board do projeto](https://github.com/gabrielgodoy/gabriel-eletro/projects/1)
+- [Board](https://github.com/gabrielgodoy/gabriel-eletro/projects/1)
+- [Milestone](https://github.com/gabrielgodoy/gabriel-eletro/milestone/1)
 
 <br />
 <br />
