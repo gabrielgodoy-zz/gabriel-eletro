@@ -2,6 +2,7 @@ import * as React from 'react';
 import gql from 'graphql-tag';
 import { Home } from '../src/components/Home/Home';
 import PageWrapper from '../src/components/PageWrapper/PageWrapper';
+import Shelf from '../src/components/Shelf/Shelf';
 import client from './../src/lib/apollo-client';
 import { StaticPage } from './_page';
 import { ApolloQueryResult } from 'apollo-client';
@@ -22,8 +23,10 @@ export default class Index extends StaticPage<{}> {
           {
             allProducts {
               id
+              sku
               name
               price
+              image
             }
           }
         `,
@@ -36,15 +39,9 @@ export default class Index extends StaticPage<{}> {
   public render() {
     return (
       <PageWrapper>
-        <style jsx>
-          {`
-            {
-              color: darkred;
-            }
-          `}
-        </style>
-        home
-        {this.state.products.map((product) => <p key={product.id}>{product.name}</p>)}
+        <Shelf products={this.state.products.slice(0, 5)} />
+        <Shelf products={this.state.products.slice(5, 10)} />
+        <Shelf products={this.state.products.slice(10)} />
       </PageWrapper>
     );
   }
