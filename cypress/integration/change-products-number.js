@@ -20,3 +20,4 @@ describe('Shelf of products', function() {
     cy.get('.shelf-container').first().find('.product').should('have.length', 1);
   });
 });
+
