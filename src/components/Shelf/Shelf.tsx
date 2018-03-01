@@ -43,8 +43,8 @@ export default class Shelf extends React.Component<ShelfProps, ShelfState> {
     return (
       <div className="shelf-container relative flex items-center">
         <div className="shelf absolute bottom-0">
-          <div className="bookend_left" />
-          <div className="bookend_right" />
+          <div className="bookend_left db absolute" />
+          <div className="bookend_right db absolute" />
           <div className="reflection" />
         </div>
 
@@ -82,13 +82,11 @@ export default class Shelf extends React.Component<ShelfProps, ShelfState> {
             }
 
             .bookend_left {
-              display: block;
-              position: absolute;
               left: -25px;
               top: -18px;
               width: 36px;
               height: 36px;
-              background-color: #ffffff;
+              background-color: #fff;
               transform: rotate(35deg);
             }
 
@@ -98,19 +96,17 @@ export default class Shelf extends React.Component<ShelfProps, ShelfState> {
               left: 17px;
               width: 20px;
               height: 10px;
-              background-color: #ffffff;
+              background-color: #fff;
               content: \"\";
               transform: rotate(-35deg);
             }
 
             .bookend_right {
-              display: block;
-              position: absolute;
               right: -25px;
               top: -18px;
               width: 36px;
               height: 36px;
-              background-color: #ffffff;
+              background-color: #fff;
               transform: rotate(-35deg);
             }
 
@@ -125,9 +121,7 @@ export default class Shelf extends React.Component<ShelfProps, ShelfState> {
               transform: rotate(35deg);
             }
 
-            .shelf__reflection {
-              display: block;
-              position: absolute;
+            .reflection {
               top: 20px;
               left: 1px;
               width: 99.8%;
