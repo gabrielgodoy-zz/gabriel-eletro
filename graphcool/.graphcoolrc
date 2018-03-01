@@ -1,0 +1,3 @@
+targets:
+  gabriel-eletro: shared-us-west-2/cje7r2zhq1l6i0169k0k7u7wv
+  default: gabriel-eletro
