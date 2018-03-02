@@ -56,7 +56,8 @@ export default class Shelf extends React.Component<ShelfProps, ShelfState> {
         </div>
 
         <div className="products items-end flex relative justify-around">
-          {this.props.products.map(
+          {
+            this.props.products.length ? this.props.products.map(
             (product, index) =>
               index < this.state.productsNumber &&
               <Product
@@ -64,7 +65,8 @@ export default class Shelf extends React.Component<ShelfProps, ShelfState> {
                 details={product}
                 changeToProductDetails={this.changeToProductDetails}
               />,
-          )}
+          ) : <p className="user-feedback self-center">Carregando produtos...</p>
+        }
         </div>
 
         <ShelfCounter
