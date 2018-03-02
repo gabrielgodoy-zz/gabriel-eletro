@@ -10,7 +10,10 @@ function formatPrice(price) {
 }
 
 const Product = (props) => (
-  <div className="product pointer">
+  <div
+    className="product pointer"
+    onClick={() => props.changeToProductDetails(props.details.id)}
+  >
     <img
       className="mw5 product-image bottom-0 relative"
       src={props.details.image}

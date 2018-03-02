@@ -29,6 +29,7 @@ const ShelfCounter = (props) => (
           }
 
           .shelf-counter-container {
+            z-index: 10;
             width: 10%;
           }
 

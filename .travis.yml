@@ -1,15 +1,21 @@
 language: node_js
 node_js:
-  - "stable"
-  - "9.4.0"
+- stable
+- 9.4.0
+before_install:
+  - sudo apt-get install xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2
 notifications:
   email:
     on_success: never
     on_failure: always
 script:
-  - npm run build
-  - npm run lint:ts
-  - npm run test:unit
-  - npm run start:ci
-  - npm run start:wait:ci
-  - npm run test:e2e
+- npm run build
+- npm run lint:ts
+- npm run test:unit
+- npm run start:ci
+- npm run start:wait:ci
+- npm run test:e2e
+deploy:
+  provider: heroku
+  api_key:
+    secure: C8Olkh3ePztp3ScgciRUP3+EMxHQiBYh3FVtRVKczB6TtiMfboJOA+ZasYu7pgPv++4/a6HQMhrjGhkUAvNfyquN2wc9tnOre5nKahDQkI1Yn2L/9kIlORA4m7icXLU2mYRNWGjf/NjBAUbFi+YWRGw9/bP8gDaaILaafAhERb26rtRRaeSOGs3fp7n0VNuD6IxLskG5Tx9eTb8tgcal2BA91I+A2zc+8RkrMfp2+ZjXr0TXt2MxT81QGI5m//nLXPLvphtG+Dn7HdwCCLhwvgpd3BrncVlFnJHfPSpOHspCi829yYh/pPiSpyIr7QHsOISxh8UeeEKPuVAaGIbfh1h1gOVXPms9XM3UyUyd0bscwIVCviPSop4r3rMEdCG6tmWBN5npPaMy3GMXyHuGXTso3qtBUaB/M94V8Wz4fB9KhKmXXQu24NzpFVke1VdVnzfwpsSHRrOMbJ58Uj5sHFHrScgesasUYTKckgSxE05KZ+QKA0OZmVtZlj6NdFYmJKuLAg+fnlZBPNLGeO6c4ueEsaFOp6Aca9pNI+/ofqR1R8ECqu0McLbo8Iv3IvmVGHgj0uO6xbz4pzbXMDz0IRbh68e4YZIITwI7qsn5O76pQ67skkahrgtj+w5Hx3MaYtMkrloO/YosFfbf9LVsxdB8+IP3HPKTJoLj2rlUKyI=

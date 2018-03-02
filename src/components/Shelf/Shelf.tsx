@@ -23,18 +23,25 @@ export default class Shelf extends React.Component<ShelfProps, ShelfState> {
     };
 
     this.changeProductsNumber = this.changeProductsNumber.bind(this);
+    this.changeToProductDetails = this.changeToProductDetails.bind(this);
   }
 
   public changeProductsNumber(action) {
     const isToDecrease = action === 'decrease';
     const { productsNumber } = this.state;
-    const reachedLimit = isToDecrease && productsNumber === 1 || !isToDecrease && productsNumber === 5;
+    const isMinimum = productsNumber === 1;
+    const isMaximum = productsNumber === 5;
+    const reachedLimit = isToDecrease && isMinimum || !isToDecrease && isMaximum;
 
     if (!reachedLimit) {
       this.setState({
         productsNumber: isToDecrease ? productsNumber - 1 : productsNumber + 1,
       });
     }
+  }
+
+  public changeToProductDetails(productID) {
+    console.log('testing', productID); // tslint:disable-line
   }
 
   // tslint:disable
@@ -49,10 +56,17 @@ export default class Shelf extends React.Component<ShelfProps, ShelfState> {
         </div>
 
         <div className="products items-end flex relative justify-around">
-          {this.props.products.map(
+          {
+            this.props.products.length ? this.props.products.map(
             (product, index) =>
-              index < this.state.productsNumber && <Product key={product.id} details={product} />,
-          )}
+              index < this.state.productsNumber &&
+              <Product
+                key={product.id}
+                details={product}
+                changeToProductDetails={this.changeToProductDetails}
+              />,
+          ) : <p className="user-feedback self-center">Carregando produtos...</p>
+        }
         </div>
 
         <ShelfCounter
