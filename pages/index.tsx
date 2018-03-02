@@ -22,7 +22,6 @@ export default class Index extends StaticPage<{}> {
           {
             allProducts {
               id
-              sku
               name
               price
               image
@@ -38,6 +37,7 @@ export default class Index extends StaticPage<{}> {
   public render() {
     return (
       <PageWrapper>
+        <h2 className="page-title tc black-60">Home</h2>
         <Shelf products={this.state.products.slice(0, 5)} />
         <Shelf products={this.state.products.slice(5, 10)} />
         <Shelf products={this.state.products.slice(10)} />

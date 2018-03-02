@@ -23,7 +23,6 @@ export default class Shelf extends React.Component<ShelfProps, ShelfState> {
     };
 
     this.changeProductsNumber = this.changeProductsNumber.bind(this);
-    this.changeToProductDetails = this.changeToProductDetails.bind(this);
   }
 
   public changeProductsNumber(action) {
@@ -38,10 +37,6 @@ export default class Shelf extends React.Component<ShelfProps, ShelfState> {
         productsNumber: isToDecrease ? productsNumber - 1 : productsNumber + 1,
       });
     }
-  }
-
-  public changeToProductDetails(productID) {
-    console.log('testing', productID); // tslint:disable-line
   }
 
   // tslint:disable
@@ -63,7 +58,6 @@ export default class Shelf extends React.Component<ShelfProps, ShelfState> {
               <Product
                 key={product.id}
                 details={product}
-                changeToProductDetails={this.changeToProductDetails}
               />,
           ) : <p className="user-feedback self-center">Carregando produtos...</p>
         }
@@ -104,17 +98,6 @@ export default class Shelf extends React.Component<ShelfProps, ShelfState> {
               transform: rotate(35deg);
             }
 
-            .bookend_left_before {
-              position: absolute;
-              top: 31px;
-              left: 17px;
-              width: 20px;
-              height: 10px;
-              background-color: #fff;
-              content: \"\";
-              transform: rotate(-35deg);
-            }
-
             .bookend_right {
               right: -25px;
               top: -18px;
@@ -122,17 +105,6 @@ export default class Shelf extends React.Component<ShelfProps, ShelfState> {
               height: 36px;
               background-color: #fff;
               transform: rotate(-35deg);
-            }
-
-            .bookend_right_before {
-              position: absolute;
-              top: 31px;
-              right: 17px;
-              width: 20px;
-              height: 10px;
-              background-color: #ffffff;
-              content: \"\";
-              transform: rotate(35deg);
             }
 
             .reflection {

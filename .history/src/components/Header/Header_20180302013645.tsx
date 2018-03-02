@@ -7,7 +7,7 @@ export default class Header extends React.Component<undefined, undefined> {
     return (
       <div className="row header pt4">
         <Link href="/">
-          <a className="logo-link">
+          <a>
             <img className="logo relative pl3 pr3 center db" src="https://goo.gl/z41qMC" />
           </a>
         </Link>
