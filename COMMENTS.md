@@ -8,13 +8,15 @@
 
 - Todo o desenvolvimento e necessidades que surgiram foram mapeadas por [issues](https://github.com/gabrielgodoy/gabriel-eletro/issues) no repositório
 
+<br/>
 
 ## Travis para Continuos Integration (CI) e Continuous Deployment (CD)
 
-O Travis foi configurado para rodar todos os teste (unitários e e2e) assim que um PR é criado para mergear com a branch master.
+O Travis foi configurado para rodar todos os testes (unitários e e2e) assim que um PR é criado para a branch master.
 
-Assim que o código é integrado a branch master sem problemas, o próprio Travis se encarrega de fazer o deploy para o Heroku.
+Assim que o código é integrado na branch master sem erros, o próprio Travis se encarrega de fazer o deploy para o [Heroku](https://gabriel-eletro.herokuapp.com/).
 
+<br/>
 
 ## Next.js para Server Side Rendering (SSR)
 
@@ -36,18 +38,7 @@ Next.js é um framework em constante desenvolvimento da comunidade que apresenta
 
 Um dos objetivos de se implementar o SSR na aplicação é a garantia de uma entrega mais rápida da página inicial ao usuário, já que esta, é inicialmente montada no lado do servidor com a ajuda do Next.js para configuração.
 
-
-## Typescript
-
-Com o ypescript é possível criar uma tipagem melhor para o código, diminuindo assim a ocorrência de bugs sem resposta e dando mais segurança a aplicação como um todo.
-
-
-## Ferramentas adicionais
-
-Linters garantem qualidade e padronização do código entre diferentes pessoas da equipe. 
-
-O uso de ferramentas como o TSLint fazem com que se foque no que realmente importa nos code reviews, que é a lógica, porque os linters já cuidam para que boa parte da formatação do código esteja de acordo com as regras que foram definidas.
-
+<br/>
 
 ## Testes
 
@@ -59,6 +50,21 @@ Testes também garantem o comportamento correto da aplicação em diferentes cen
 
 - [Cypress](https://www.cypress.io/) para testes End2End que simulam a interação do usuário na página, e alerta caso algum problema ocorra, dessa forma esse erro não chega ao usuário final porque esses testes se encarregaram de sinalizar o problema antes para o desenvolvedor. Testar de ponta a ponta é garantir que a integração entre todo o sistema está ocorrendo de forma correta.
 
+<br/>
+
+## Typescript
+
+Com o Typescript é possível criar uma tipagem melhor para o código, diminuindo assim a ocorrência de bugs sem resposta e dando mais segurança a aplicação como um todo.
+
+<br/>
+
+## Ferramentas adicionais
+
+Linters garantem qualidade e padronização do código entre diferentes pessoas da equipe. 
+
+O uso de ferramentas como o TSLint fazem com que se foque no que realmente importa nos code reviews, que é a lógica, porque os linters já cuidam para que boa parte da formatação do código esteja de acordo com as regras que foram definidas.
+
+<br/>
 
 ## Tachyons com framework de CSS
 
