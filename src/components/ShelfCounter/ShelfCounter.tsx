@@ -1,7 +1,12 @@
 import * as React from 'react';
 import css from 'styled-jsx/css';
 
-const ShelfCounter = (props) => (
+interface ShelfCounterProps {
+  counter: number;
+  changeProductsNumber: (n: string) => void;
+}
+
+const ShelfCounter = (props: ShelfCounterProps) => (
   <div className="shelf-counter-container relative flex items-center flex-column">
     <div className="product-number-title">Número de items</div>
     <div className="input-prepend-append flex justify-center items-center">

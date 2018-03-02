@@ -2,15 +2,18 @@ import * as React from 'react';
 import gql from 'graphql-tag';
 import PageWrapper from '../src/components/PageWrapper/PageWrapper';
 import Shelf from '../src/components/Shelf/Shelf';
-import client from './../src/lib/apollo-client';
-import { StaticPage } from './_page';
+import client from './../src/utils/apollo-client';
 import { ApolloQueryResult } from 'apollo-client';
 
 interface GraphqlResponse {
-  allProducts: object[];
+  allProducts: Product[];
 }
 
-export default class Index extends StaticPage<{}> {
+interface IndexState {
+  products: Product[];
+}
+
+export default class Index extends React.Component<undefined, IndexState> {
   public state = {
     products: [],
   };
