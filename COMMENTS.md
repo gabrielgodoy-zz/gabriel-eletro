@@ -1,16 +1,24 @@
-# Comentários
+# Principais decisões tomadas para a estrutura base
 
-Documento que descreve o processo de desenvolvimento e decisões no projeto.
+## Boards, Milestones e Issues
 
-## Principais decisões tomadas para a estrutura base
+- O progresso do desenvolvimento pode ser visto no [board principal](https://github.com/gabrielgodoy/gabriel-eletro/projects/1) do repositório
 
-### Boards e Issues
+- As tarefas definidas para a entrega do desafio foram agrupadas no [Milestone de entrega](https://github.com/gabrielgodoy/gabriel-eletro/milestone/1)
 
-O progresso do desenvolvimento da aplicação pode ser visto no [board principal](https://github.com/gabrielgodoy/gabriel-eletro/projects/1) do repositório
+- Todo o desenvolvimento e necessidades que surgiram foram mapeadas por [issues](https://github.com/gabrielgodoy/gabriel-eletro/issues) no repositório
 
-Através de issues e labels é possível mapear o que deve ser desenvolvido e quando. Esse método de trabalhar simula uma situação real de desenvolvimento e norteia melhor a equipe sobre o que deve ser feito e priorizado.
+<br/>
 
-### Next.js
+## Travis para Continuos Integration (CI) e Continuous Deployment (CD)
+
+O Travis foi configurado para rodar todos os testes (unitários e e2e) assim que um PR é criado para a branch master.
+
+Assim que o código é integrado na branch master sem erros, o próprio Travis se encarrega de fazer o deploy para o [Heroku](https://gabriel-eletro.herokuapp.com/).
+
+<br/>
+
+## Next.js para Server Side Rendering (SSR)
 
 A implementação de server-side rendering sem nenhum framework para auxiliar pode ser trabalhosa e suscetível a erros. 
 
@@ -26,26 +34,39 @@ Next.js é um framework em constante desenvolvimento da comunidade que apresenta
 
 - CSS com escopo que evita colisão de classes com o framework [styled-jsx](https://github.com/zeit/styled-jsx)
 
-### Tooling
+### Porque Server side rendering (SSR)?
 
-Linters garantem qualidade e padronização do código entre diferentes pessoas da equipe. 
+Um dos objetivos de se implementar o SSR na aplicação é a garantia de uma entrega mais rápida da página inicial ao usuário, já que esta, é inicialmente montada no lado do servidor com a ajuda do Next.js para configuração.
 
-O uso de ferramentas como o TSLint fazem com que se foque no que realmente importa nos code reviews, que é a lógica, porque os linters já cuidam para que boa parte da formatação do código esteja de acordo com as regras que foram definidas.
+<br/>
 
-### Testes
+## Testes
 
 Testes garantem que a aplicação funcione de maneira adequada e que bugs resolvidos no passado não retornem a aplicação pegando as pessoas da equipe de surpresa.
 
 Testes também garantem o comportamento correto da aplicação em diferentes cenários.
 
-- Teste unitários testam cada função separadamente
-- Teste End2End simulam a interação do usuário na página, e alerta caso algum problema ocorra, dessa forma esse erro não chega ao usuário final porque esses testes se encarregaram de sinalizar o problema antes.
+- [Jest](https://github.com/facebook/jest) junto com a biblioteca [Enzyme](https://github.com/airbnb/enzyme) para testes unitários, que testam cada função/componente separadamente
 
-### Server side rendering (SSR)
+- [Cypress](https://www.cypress.io/) para testes End2End que simulam a interação do usuário na página, e alerta caso algum problema ocorra, dessa forma esse erro não chega ao usuário final porque esses testes se encarregaram de sinalizar o problema antes para o desenvolvedor. Testar de ponta a ponta é garantir que a integração entre todo o sistema está ocorrendo de forma correta.
 
-Um dos objetivos de se implementar o SSR na aplicação é a garantia de uma entrega mais rápida da página inicial ao usuário, já que esta, é inicialmente montada no lado do servidor.
+<br/>
 
-### Tachyons com framework de CSS
+## Typescript
+
+Com o Typescript é possível criar uma tipagem melhor para o código, diminuindo assim a ocorrência de bugs sem resposta e dando mais segurança a aplicação como um todo.
+
+<br/>
+
+## Ferramentas adicionais
+
+Linters garantem qualidade e padronização do código entre diferentes pessoas da equipe. 
+
+O uso de ferramentas como o TSLint fazem com que se foque no que realmente importa nos code reviews, que é a lógica, porque os linters já cuidam para que boa parte da formatação do código esteja de acordo com as regras que foram definidas.
+
+<br/>
+
+## Tachyons com framework de CSS
 
 Apesar de já ter ouvido falar nunca tinha trabalhado. 
 
