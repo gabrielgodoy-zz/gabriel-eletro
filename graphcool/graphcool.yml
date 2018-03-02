@@ -1,21 +1,4 @@
-# Arquivo de configuração do Graphcool
-
-# schema dos dados no arquivo abaixo
 types: ./types.graphql
 
-functions:
-  hello:
-    handler:
-      code: src/hello.js
-    type: resolver
-    schema: src/hello.graphql
-
-# Possibilidade de limitar o acesso a API
 permissions:
   - operation: "*"
-
-# Your root tokens used for functions to get full access to the API
-# Read more here:
-# https://www.graph.cool/docs/reference/auth/authentication/authentication-tokens-eip7ahqu5o
-# rootTokens:
-#   - mytoken

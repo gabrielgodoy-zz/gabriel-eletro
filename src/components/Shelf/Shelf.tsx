@@ -3,10 +3,6 @@ import css from 'styled-jsx/css';
 import ShelfCounter from '../ShelfCounter/ShelfCounter';
 import Product from '../Product/Product';
 
-interface Product {
-  id: string;
-}
-
 interface ShelfProps {
   products: Product[];
 }
@@ -55,10 +51,7 @@ export default class Shelf extends React.Component<ShelfProps, ShelfState> {
             this.props.products.length ? this.props.products.map(
             (product, index) =>
               index < this.state.productsNumber &&
-              <Product
-                key={product.id}
-                details={product}
-              />,
+              <Product key={product.id} details={product} />,
           ) : <p className="user-feedback self-center">Carregando produtos...</p>
         }
         </div>
@@ -68,7 +61,7 @@ export default class Shelf extends React.Component<ShelfProps, ShelfState> {
           changeProductsNumber={this.changeProductsNumber}
         />
 
-        <style>
+        <style jsx>
           {`
             .products {
               min-height: 300px;
@@ -115,7 +108,7 @@ export default class Shelf extends React.Component<ShelfProps, ShelfState> {
               background-image: -ms-linear-gradient(0deg, #ffffff 0%, rgba(255, 255, 255, 0.5) 35%, #ffffff 65%, rgba(255, 255, 255, 0.7) 100%);
               filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(255, 255, 255, 0.7)', endColorstr='#ffffff', GradientType='0' );
             }
-          `};
+          `}
         </style>
       </div>
     );

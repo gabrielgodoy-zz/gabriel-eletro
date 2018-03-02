@@ -1,11 +1,15 @@
 import * as React from 'react';
 import Link from 'next/link';
 import css from 'styled-jsx/css';
-import formatPrice from './../../lib/format-price';
+import formatPrice from './../../utils/format-price';
 
-const Product = (props) => (
+interface ProductProps {
+  details: Product;
+}
+
+const Product = (props: ProductProps) => (
   <Link href={`/produto?id=${props.details.id}`}>
-    <a className="product pointer link" >
+    <a className="product pointer link">
       <img
         className="mw5 product-image bottom-0 relative"
         src={props.details.image}

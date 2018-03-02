@@ -1,16 +1,31 @@
 import * as React from 'react';
 import gql from 'graphql-tag';
 import PageWrapper from '../src/components/PageWrapper/PageWrapper';
-import client from './../src/lib/apollo-client';
-import { StaticPage } from './_page';
+import client from './../src/utils/apollo-client';
 import { ApolloQueryResult } from 'apollo-client';
-import formatPrice from './../src/lib/format-price';
+import formatPrice from './../src/utils/format-price';
 
 interface GraphqlResponse {
-  Product: object[];
+  Product: Product;
 }
 
-export default class Produto extends StaticPage<{}> {
+interface Query {
+  id: string;
+}
+
+interface Url {
+  query: Query;
+}
+
+interface ProdutoProps {
+  url: Url;
+}
+
+interface ProdutoState {
+  product: Product;
+}
+
+export default class Produto extends React.Component<ProdutoProps, ProdutoState> {
   public state = {
     product: {
       image: null,

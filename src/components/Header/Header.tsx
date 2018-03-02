@@ -14,7 +14,7 @@ export default class Header extends React.Component<undefined, undefined> {
 
         <div className="pt4 pb4 pl3 pr3 nav-bar custom-gradient-yellow" />
 
-        <style>
+        <style jsx>
           {`
             .header {
               background: #f7f7f7;
@@ -27,7 +27,7 @@ export default class Header extends React.Component<undefined, undefined> {
             .custom-gradient-yellow {
               background: linear-gradient(to bottom, rgba(252,231,3,1) 0%, rgba(231,169,0,1) 100%);
             }
-          `};
+          `}
         </style>
       </div>
     );
