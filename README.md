@@ -1,6 +1,6 @@
 # Gabriel Eletro
 
-[![Travis](https://img.shields.io/travis/gabrielgodoy/gabriel-eletro.svg)]()
+[![Build Status](https://travis-ci.org/gabrielgodoy/gabriel-eletro.svg?branch=master)](https://travis-ci.org/gabrielgodoy/gabriel-eletro)
 
 Acesse a [Gabriel Eletro](https://gabriel-eletro.herokuapp.com/) em produção
 
