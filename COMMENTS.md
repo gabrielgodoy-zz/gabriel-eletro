@@ -75,3 +75,14 @@ Tachyons tem como principais vantagens:
 - Minimalista. Com pouco código se atinge páginas responsivas
 
 - Modular, permitindo compor pequenos módulos para se atingir um resultado
+
+---
+
+# Evolução do projeto
+O que mais seria feito caso o projeto tivesse continuidade?
+
+## Responsividade no layout
+
+## Mais casos de teste
+
+## Simulação da loja sem "modo de edição"
