@@ -25,7 +25,7 @@
     "prepush": "npm run test && npm run lint:ts",
     "heroku-deploy": "git push heroku master",
     "heroku-remote": "git remote add heroku https://git.heroku.com/gabriel-eletro.git",
-    "heroku-postbuild": "heroku-nextjs-build"
+    "heroku-postbuild": "next build"
   },
   "dependencies": {
     "@types/classnames": "^2.2.3",
