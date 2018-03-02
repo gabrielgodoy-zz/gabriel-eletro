@@ -6,7 +6,7 @@ import { ApolloQueryResult } from 'apollo-client';
 import formatPrice from './../src/utils/format-price';
 
 interface GraphqlResponse {
-  Product: object[];
+  Product: Product;
 }
 
 interface Query {
