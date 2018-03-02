@@ -2,6 +2,8 @@ language: node_js
 node_js:
 - stable
 - 9.4.0
+before_install:
+  - sudo apt-get install xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2
 notifications:
   email:
     on_success: never
