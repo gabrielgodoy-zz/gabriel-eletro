@@ -15,7 +15,7 @@ interface ShelfState {
   productsNumber: number;
 }
 
-class Shelf extends React.Component<ShelfProps, ShelfState> {
+export class Shelf extends React.Component<ShelfProps, ShelfState> {
   constructor(props) {
     super(props);
     this.state = {

@@ -15,7 +15,7 @@ interface HeaderProps {
   actions: HeaderActions;
 }
 
-class Header extends React.Component<HeaderProps, undefined> {
+export class Header extends React.Component<HeaderProps, undefined> {
   public render() {
     const { actions, editMode } = this.props;
     return (
