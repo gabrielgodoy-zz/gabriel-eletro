@@ -1,7 +1,9 @@
 import * as React from 'react';
 import gql from 'graphql-tag';
+import withRedux from 'next-redux-wrapper';
 import PageWrapper from '../src/components/PageWrapper/PageWrapper';
-import Shelf from '../src/components/Shelf/Shelf';
+import initStore from '../src/store';
+import Shelf from '../src/containers/Shelf/Shelf';
 import client from './../src/utils/apollo-client';
 import { ApolloQueryResult } from 'apollo-client';
 
@@ -13,7 +15,7 @@ interface IndexState {
   products: Product[];
 }
 
-export default class Index extends React.Component<undefined, IndexState> {
+class Index extends React.Component<undefined, IndexState> {
   public state = {
     products: [],
   };
@@ -48,3 +50,5 @@ export default class Index extends React.Component<undefined, IndexState> {
     );
   }
 }
+
+export default withRedux(initStore, (state) => state)(Index);

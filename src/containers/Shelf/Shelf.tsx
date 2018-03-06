@@ -1,9 +1,13 @@
 import * as React from 'react';
 import css from 'styled-jsx/css';
-import ShelfCounter from '../ShelfCounter/ShelfCounter';
-import Product from '../Product/Product';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import ShelfCounter from '../../components/ShelfCounter/ShelfCounter';
+import { enableEditMode, disableEditMode } from './../../ducks/editMode';
+import Product from '../../components/Product/Product';
 
 interface ShelfProps {
+  editMode: boolean;
   products: Product[];
 }
 
@@ -11,7 +15,7 @@ interface ShelfState {
   productsNumber: number;
 }
 
-export default class Shelf extends React.Component<ShelfProps, ShelfState> {
+class Shelf extends React.Component<ShelfProps, ShelfState> {
   constructor(props) {
     super(props);
     this.state = {
@@ -26,7 +30,7 @@ export default class Shelf extends React.Component<ShelfProps, ShelfState> {
     const { productsNumber } = this.state;
     const isMinimum = productsNumber === 1;
     const isMaximum = productsNumber === 5;
-    const reachedLimit = isToDecrease && isMinimum || !isToDecrease && isMaximum;
+    const reachedLimit = (isToDecrease && isMinimum) || (!isToDecrease && isMaximum);
 
     if (!reachedLimit) {
       this.setState({
@@ -35,11 +39,11 @@ export default class Shelf extends React.Component<ShelfProps, ShelfState> {
     }
   }
 
-  // tslint:disable
-
   public render() {
+    const isProductsFull = this.props.editMode ? '' : 'products-full';
+
     return (
-      <div className="shelf-container relative flex items-center">
+      <div className={`shelf-container ${isProductsFull} shelf-container-full relative flex items-center`}>
         <div className="shelf absolute bottom-0">
           <div className="bookend_left db absolute" />
           <div className="bookend_right db absolute" />
@@ -47,19 +51,22 @@ export default class Shelf extends React.Component<ShelfProps, ShelfState> {
         </div>
 
         <div className="products items-end flex relative justify-around">
-          {
-            this.props.products.length ? this.props.products.map(
-            (product, index) =>
-              index < this.state.productsNumber &&
-              <Product key={product.id} details={product} />,
-          ) : <p className="user-feedback self-center">Carregando produtos...</p>
-        }
+          {this.props.products.length ? (
+            this.props.products.map(
+              (product, index) =>
+                index < this.state.productsNumber && <Product key={product.id} details={product} />,
+            )
+          ) : (
+            <p className="user-feedback self-center">Carregando produtos...</p>
+          )}
         </div>
 
-        <ShelfCounter
-          counter={this.state.productsNumber}
-          changeProductsNumber={this.changeProductsNumber}
-        />
+        {this.props.editMode && (
+          <ShelfCounter
+            counter={this.state.productsNumber}
+            changeProductsNumber={this.changeProductsNumber}
+          />
+        )}
 
         <style jsx>
           {`
@@ -67,6 +74,10 @@ export default class Shelf extends React.Component<ShelfProps, ShelfState> {
               min-height: 300px;
               z-index: 9;
               width: 90%;
+            }
+
+            .products-full {
+              width: 100%;
             }
 
             .shelf-container {
@@ -78,8 +89,13 @@ export default class Shelf extends React.Component<ShelfProps, ShelfState> {
               height: 20px;
               margin: 180px auto 110px;
               background-image: linear-gradient(90deg, #d1d8de 0%, #eff1f3 100%);
-              filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eff1f3', endColorstr='#d1d8de', GradientType='0' );
-              box-shadow: 0 2px 2px #708698, 0 4px 0 #abb8c3, 0 20px 30px -8px #000000, transparent 0 0 0, transparent 0 0 0, transparent 0 0 0;
+              box-shadow: 0 2px 2px #708698, 0 4px 0 #abb8c3, 0 20px 30px -8px #000000,
+                transparent 0 0 0, transparent 0 0 0, transparent 0 0 0;
+            }
+
+            .products-full .shelf,
+            .products-full .products {
+              width: 100%;
             }
 
             .bookend_left {
@@ -105,8 +121,13 @@ export default class Shelf extends React.Component<ShelfProps, ShelfState> {
               left: 1px;
               width: 99.8%;
               height: 1px;
-              background-image: -ms-linear-gradient(0deg, #ffffff 0%, rgba(255, 255, 255, 0.5) 35%, #ffffff 65%, rgba(255, 255, 255, 0.7) 100%);
-              filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(255, 255, 255, 0.7)', endColorstr='#ffffff', GradientType='0' );
+              background-image: -ms-linear-gradient(
+                0deg,
+                #ffffff 0%,
+                rgba(255, 255, 255, 0.5) 35%,
+                #ffffff 65%,
+                rgba(255, 255, 255, 0.7) 100%
+              );
             }
           `}
         </style>
@@ -114,3 +135,17 @@ export default class Shelf extends React.Component<ShelfProps, ShelfState> {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    editMode: state.editMode,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators({ enableEditMode, disableEditMode }, dispatch),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Shelf);
