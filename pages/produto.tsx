@@ -1,5 +1,7 @@
 import * as React from 'react';
 import gql from 'graphql-tag';
+import withRedux from 'next-redux-wrapper';
+import initStore from '../src/store';
 import PageWrapper from '../src/components/PageWrapper/PageWrapper';
 import client from './../src/utils/apollo-client';
 import { ApolloQueryResult } from 'apollo-client';
@@ -25,7 +27,7 @@ interface ProdutoState {
   product: Product;
 }
 
-export default class Produto extends React.Component<ProdutoProps, ProdutoState> {
+class Produto extends React.Component<ProdutoProps, ProdutoState> {
   public state = {
     product: {
       image: null,
@@ -98,3 +100,5 @@ export default class Produto extends React.Component<ProdutoProps, ProdutoState>
     );
   }
 }
+
+export default withRedux(initStore, (state) => state)(Produto);
